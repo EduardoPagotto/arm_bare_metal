@@ -1,0 +1,6 @@
+[
+    {
+        "name": "Clang-ARM",
+        "toolchainFile": "./toolchain/arm01.cmake"
+    }
+]
