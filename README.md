@@ -31,6 +31,19 @@ arm-none-eabi-objcopy -O binary test.elf test.bin
 qemu-system-arm -M versatilepb -m 128M -nographic -kernel test.bin
 qemu-system-arm -M versatilepb -m 128M -nographic -s -S -kernel test.bin
 ```
+# Fedora
+change default linker
+```bash
+# List all alternativer
+update-alternatives --list
+
+# List alternativer of linkewr
+update-alternatives --config ld
+
+# Set linker to ld.lld
+sudo update-alternatives --config ld
+```
+
 
 ## GDB
 target remote localhost:1234
@@ -40,4 +53,5 @@ file test.elf
 - https://balau82.wordpress.com/2010/02/28/hello-world-for-bare-metal-arm-using-qemu/
 
 
-cmake ../ -DCMAKE_TOOLCHAIN_FILE=../toolchain/arm01.cmake
+ cmake ../ -DCMAKE_TOOLCHAIN_FILE=../toolchain/clang_arm.cmake
+
