@@ -1,6 +1,10 @@
 [
     {
+        "name": "GCC-ARM",
+        "toolchainFile": "./toolchain/gcc_arm.cmake"
+    },
+    {
         "name": "Clang-ARM",
-        "toolchainFile": "./toolchain/arm01.cmake"
+        "toolchainFile": "./toolchain/clang_arm.cmake"
     }
 ]

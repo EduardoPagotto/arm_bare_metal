@@ -1,7 +1,34 @@
 # arm_bare_metal
 ARM low level
 
-## Instalação
+## By CLANG
+Fedora deps
+```bash
+# Change default linker do ld.lld
+# List all alternativer
+update-alternatives --list
+
+# List alternativer of linkewr
+update-alternatives --config ld
+
+# Set linker to ld.lld
+sudo update-alternatives --config ld
+```
+
+Compile/Link
+```bash
+mkdir builld
+cd build
+cmake ../ -DCMAKE_TOOLCHAIN_FILE=../toolchain/clang_arm.cmake
+make
+
+# Clean All
+make clean-all
+
+```
+
+
+## In GCC
 Cross-Compiller ToolChain: https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads
 ```bash
 tar xvf gcc-arm-none-eabi-9-2020-q2-update-x86_64-linux.tar.bz2
@@ -32,6 +59,8 @@ qemu-system-arm -M versatilepb -m 128M -nographic -kernel test.bin
 qemu-system-arm -M versatilepb -m 128M -nographic -s -S -kernel test.bin
 ```
 
+
+
 ## GDB
 target remote localhost:1234
 file test.elf
@@ -40,4 +69,5 @@ file test.elf
 - https://balau82.wordpress.com/2010/02/28/hello-world-for-bare-metal-arm-using-qemu/
 
 
-cmake ../ -DCMAKE_TOOLCHAIN_FILE=../toolchain/arm01.cmake
+
+
