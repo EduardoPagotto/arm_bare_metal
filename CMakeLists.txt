@@ -8,10 +8,6 @@ set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_EXTENSIONS OFF)     # Force the usage of _ISOC11_SOURCE
 set(CMAKE_C_COMPILER_ABI "ilp32")
 
-message(STATUS "**************************************")
-message(STATUS "Toolchain file in: \"${CMAKE_TOOLCHAIN_FILE}\"")
-message(STATUS "languages: \"${languages}\"")
-
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
